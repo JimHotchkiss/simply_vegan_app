@@ -1,0 +1,21 @@
+<!-- Build with FormBuilder, but can explicitly user fields_with_erros if need be -->
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="wrapper">
+  <%= form_for @user do |f| %>
+    <%= render 'form',  f: f %>
+  <% end %>
+</div>
