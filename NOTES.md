@@ -7,3 +7,8 @@ After evaluating my earlier project, I decided it was too much like a blog post,
     ~ email
     ~ password_digest (bcrypt -> has_secure_password)
 2. Want a basic registration process for the user.  
+3. Now going to build basic login authentication.
+  * Include routes
+  * form
+  * bcrypt
+  

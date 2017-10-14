@@ -1,0 +1,19 @@
+
+<div class="containers">
+  <%= flash[:alert] %>
+
+</div>
+<div class="container">
+  <%= form_tag({controller: 'sessions', action: 'new', method: 'POST'}) do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <%= submit_tag 'login' %>
+  <% end %><br></br>
+</div>
+
+<div class="container">
+  <p style="display:inline; color:blue">You can also login using Github</p>
+  <a class="navbar-brand" href="/auth/github"><i class="fa fa-github" style="font-size:36px;color:green"></i>
+</div>
