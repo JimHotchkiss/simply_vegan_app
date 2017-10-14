@@ -1,8 +1,7 @@
 
 <div class="containers">
-  <%= flash[:alert] %>
-
-</div>
+  <p style="color:red"><%= flash[:alert] %></p>
+</div><br>
 <div class="container">
   <%= form_tag({controller: 'sessions', action: 'new', method: 'POST'}) do %>
     <%= label_tag :username %>
