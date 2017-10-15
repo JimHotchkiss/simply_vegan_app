@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static#welcome'
 
+  get '/auth/:provider/callback', to: 'sessions#create'
   get  'login',  to: 'sessions#new'
   post 'login',  to: 'sessions#create'
   get  'logout', to: 'sessions#destroy'

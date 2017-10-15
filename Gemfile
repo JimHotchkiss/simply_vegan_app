@@ -40,6 +40,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'omniauth'
+  gem 'omniauth-github'
+  gem 'dotenv-rails'
 end
 
 group :development do
