@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :comments
   root to: 'recipes#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'
@@ -11,9 +10,10 @@ Rails.application.routes.draw do
   resources :users, only: [:new]
   resources :ingredients, only: [:show]
   resources :recipes, only: [:index, :new, :create, :show]
+  resources :comments, only: [:create]
 
   resources :recipes, only: [:show] do
-    resources :comments, only: [:new, :create]
-  end 
+    resources :comments, only: [:new]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

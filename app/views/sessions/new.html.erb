@@ -3,12 +3,10 @@
   <p style="color:red"><%= flash[:alert] %></p>
 </div><br>
 <div class="container">
-  <%= form_tag({controller: 'sessions', action: 'new', method: 'POST'}) do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag 'login' %>
+  <%= bootstrap_form_tag({controller: 'sessions', action: 'new', method: 'POST'}) do |f| %>
+    <%= f.text_field :username, label: "Username" %>
+    <%= f.password_field :password, label: "Password" %>
+    <%= f.submit 'login' %>
   <% end %><br></br>
 </div>
 

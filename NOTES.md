@@ -22,16 +22,10 @@ I will also need a join table recipe_ingredients
 I need to make the appropriate views and forms
 # for style sake, I'd like to keep all recipe titles and ingredient names downcase. So I will have to do a before_ action.  
 
-I want to add a ingredient show page that list all the recipes associated with that ingredient.  
+I want to add a ingredient show page that list all the recipes associated with that ingredient.
 
-<%= link_to "New Comment", new_project_comment_path(@project) %>
-<p style="font-weight:bold;">Comments:</p>
-<% @project_comments.each do |comment| %>
-  <div class="container" style="border : solid 1px #ffffff; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
-      <h2 style="color:red"><%= flash[:notice] %></h2>
-   ~> <%= comment.description %><br>
-
-       <%= link_to 'Edit', edit_comment_path(comment) %> | <%= link_to "Delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>
-
- </div><br>
-<% end %>
+So, I've added the layout for comments, no I want I link_to comments, and create a new comment.
+  * With comments, I need a new form
+  * Add validations
+  * With validation errors
+  * Also, remember, when using bootstrap_form_for, to install gem 'bootstrap_form'
