@@ -21,3 +21,5 @@ I will also need a join table recipe_ingredients
 
 I need to make the appropriate views and forms
 # for style sake, I'd like to keep all recipe titles and ingredient names downcase. So I will have to do a before_ action.  
+
+I want to add a ingredient show page that list all the recipes associated with that ingredient.  

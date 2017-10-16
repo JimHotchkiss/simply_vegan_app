@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    @ingredients = Ingredient.all 
+    @ingredients = Ingredient.all
   end
 
   def new
@@ -12,9 +12,9 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = current_user.id
 
     if @recipe.save
-      @recipe.user_id = current_user.id
       flash[:message] = "Thanks for contributing a recipe"
       redirect_to recipe_path(@recipe)
     else
