@@ -25,6 +25,7 @@ class RecipesController < ApplicationController
 
   def show
     find_recipe
+    @recipe_comments = find_recipe.comments
   end
 
   private
