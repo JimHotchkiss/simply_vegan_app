@@ -1,4 +1,7 @@
 <!-- validation erros, move to partial-->
+<div class="container">
+  <%= flash[:message] %>
+</div>
 <%= link_to "New Comment", new_recipe_comment_path(@recipe) %>
 <p style="font-weight:bold;">Comments:</p>
 <% @recipe_comments.each do |comment| %>
