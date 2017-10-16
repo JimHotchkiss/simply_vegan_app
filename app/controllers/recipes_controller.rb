@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   include RecipesHelper
 
+  def index
+    @recipes = Recipe.all
+    @ingredients = Ingredient.all 
+  end
+
   def new
     @recipe = Recipe.new
   end

@@ -1,0 +1,25 @@
+
+<%= render 'static/welcome' %>
+
+<% if logged_in? %>
+  <%= render 'recipes/links' %>
+<% else %>
+
+  <div class="container">
+    <p>______________________________________________________________________________________________________________________________________________________________</p>
+
+    <p style="color:red">Search by ingredients:</p>
+      <% @ingredients.each do |ingredient|  %>
+        | <%= ingredient.name %>
+      <% end %>
+  </div>
+
+  <div class="container">
+    <p>______________________________________________________________________________________________________________________________________________________________</p>
+
+    <p style="color:red">Recipes:</p>
+      <% @recipes.each do |recipe|  %>
+        | <%= recipe.title %>
+      <% end %>
+  </div>
+<% end %>

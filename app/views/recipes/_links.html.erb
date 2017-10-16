@@ -1,0 +1,17 @@
+<div class="container">
+  <p>______________________________________________________________________________________________________________________________________________________________</p>
+
+  <p style="color:red">Search by ingredients:</p>
+    <% @ingredients.each do |ingredient|  %>
+      | <%= link_to ingredient.name, ingredient_path(ingredient) %>
+    <% end %>
+</div>
+
+<div class="container">
+  <p>______________________________________________________________________________________________________________________________________________________________</p>
+
+  <p style="color:red">Recipes:</p>
+    <% @recipes.each do |recipe|  %>
+      | <%= link_to recipe.title, recipe_path(recipe) %>
+    <% end %>
+</div>

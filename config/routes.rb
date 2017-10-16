@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'static#welcome'
+  root to: 'recipes#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get  'login',  to: 'sessions#new'
