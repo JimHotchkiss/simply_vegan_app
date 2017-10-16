@@ -11,4 +11,10 @@ After evaluating my earlier project, I decided it was too much like a blog post,
   * Include routes
   * form
   * bcrypt
-  
+Now, want to build out the association between recipe and ingredient.   
+  * I will need nested routes
+  * migrations
+  * models
+  * controllers
+  * views with forms
+I will also need a join table recipe_ingredients

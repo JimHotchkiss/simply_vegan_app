@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ingredients
+  resources :recipes
   root to: 'static#welcome'
 
   get '/auth/:provider/callback', to: 'sessions#create'
