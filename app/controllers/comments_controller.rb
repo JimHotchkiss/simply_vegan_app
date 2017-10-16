@@ -12,7 +12,11 @@ class CommentsController < ApplicationController
       redirect_to recipe_path(@comment.recipe_id)
     else
       render :new
-    end 
+    end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
   end
 
   private

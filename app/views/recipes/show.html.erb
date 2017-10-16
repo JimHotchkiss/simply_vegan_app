@@ -3,6 +3,11 @@
     <p><%= @recipe.title %></p><br>
   <p style="font-weight:bold; color:red">Instructions:</p>
     <p><%= @recipe.instructions %><p>
+
+      <% if @recipe.user_id == current_user.id %>
+        <%= link_to 'edit', edit_recipe_path%> | <%= link_to 'delete', @recipe, method: :delete, data: {confirm: "WAIT! Seriously?"} %>
+      <% end %>
+
 </div><br></br>
 
 <div class="container">

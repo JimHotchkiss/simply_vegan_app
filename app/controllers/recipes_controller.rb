@@ -23,6 +23,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = find_recipe
+  end
+
+  def update
+    @recipe = find_recipe
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
+  end
+
   def show
     @recipe = find_recipe
     @recipe_comments = find_recipe.comments.most_recent(@recipe.comments.count)

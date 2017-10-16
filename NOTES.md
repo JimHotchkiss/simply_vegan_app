@@ -33,3 +33,5 @@ So, I've added the layout for comments, no I want I link_to comments, and create
 
   Add a scope method to show the most recent comment.
   And add link_to ingredients on recipe show page
+
+  I want to add the ability for a user to edit or delete their own recipe

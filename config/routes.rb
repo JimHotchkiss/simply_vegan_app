@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :ingredients, only: [:show]
-  resources :recipes, only: [:index, :new, :create, :show]
+  resources :recipes, only: [:index, :new, :create, :show, :edit, :update]
   resources :comments, only: [:create]
 
   resources :recipes, only: [:show] do
