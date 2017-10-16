@@ -4,4 +4,10 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true
   validates :instructions, presence: true
+
+  before_save :make_title_downcase
+
+  def make_title_downcase
+    self.title = self.title.downcase
+  end
 end

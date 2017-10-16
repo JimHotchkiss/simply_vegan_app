@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  include RecipesHelper
 
   def new
     @recipe = Recipe.new
@@ -13,9 +14,12 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       # validation
-      render :new 
+      render :new
+    end
+  end
 
-    binding.pry
+  def show
+    find_recipe
   end
 
   private
