@@ -18,3 +18,5 @@ Now, want to build out the association between recipe and ingredient.
   * controllers
   * views with forms
 I will also need a join table recipe_ingredients
+
+I need to make the appropriate views and forms 
