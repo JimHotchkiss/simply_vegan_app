@@ -30,3 +30,6 @@ So, I've added the layout for comments, no I want I link_to comments, and create
   * With validation errors
   * Also, remember, when using bootstrap_form_for, to install gem 'bootstrap_form'
   <%= link_to 'Edit', edit_comment_path(comment) %> | <%= link_to "Delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>
+
+  Add a scope method to show the most recent comment.
+  And add link_to ingredients on recipe show page

@@ -24,8 +24,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    find_recipe
-    @recipe_comments = find_recipe.comments
+    @recipe = find_recipe
+    @recipe_comments = find_recipe.comments.most_recent(@recipe.comments.count)
   end
 
   private
