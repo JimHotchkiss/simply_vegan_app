@@ -19,4 +19,5 @@ Now, want to build out the association between recipe and ingredient.
   * views with forms
 I will also need a join table recipe_ingredients
 
-I need to make the appropriate views and forms 
+I need to make the appropriate views and forms
+# for style sake, I'd like to keep all recipe titles and ingredient names downcase. So I will have to do a before_ action.  

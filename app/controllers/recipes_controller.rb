@@ -5,6 +5,16 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+
+    if @recipe.save
+      @recipe.user_id = current_user.id
+      flash[:message] = "Thanks for contributing a recipe"
+      redirect_to recipe_path(@recipe)
+    else
+      # validation
+      render :new 
+
     binding.pry
   end
 
