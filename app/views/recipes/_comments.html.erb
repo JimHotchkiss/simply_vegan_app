@@ -1,6 +1,6 @@
 <!-- validation erros, move to partial-->
 <div class="container">
-  <%= flash[:message] %>
+  <p style="color:red"><%= flash[:message] %></p>
 </div>
 <%= link_to "New Comment", new_recipe_comment_path(@recipe) %>
 <p style="font-weight:bold;">Comments:</p>
@@ -8,5 +8,6 @@
   <div class="container" style="border : solid 1px #000000; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
       <h2 style="color:red"><%= flash[:notice] %></h2>
    ~> <%= comment.description %><br>
+   <%= render '/recipes/motify', comment: comment %>
  </div><br>
 <% end %>

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      flash[:message] = "Thanks for you comment"
+      flash[:message] = "Thanks for your comment"
       redirect_to recipe_path(@comment.recipe_id)
     else
       render :new
@@ -17,6 +17,21 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    if @comment.save
+     redirect_to recipe_path(@comment.recipe_id)
+   else
+     render :new
+   end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+    redirect_to recipe_path(@comment.recipe_id)
   end
 
   private

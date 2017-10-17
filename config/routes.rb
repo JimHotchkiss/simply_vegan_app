@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :ingredients, only: [:show]
   resources :recipes
-  resources :comments, only: [:create]
+  resources :comments
 
   resources :recipes, only: [:show] do
     resources :comments, only: [:new]
