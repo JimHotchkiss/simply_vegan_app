@@ -54,3 +54,5 @@ Giong to try another fix, by adding '<%= csrf_meta_tags %>' into the <head>
   * This seems to work, and is required in Rails 4 for jQuerry UJS to send the aunthenticity token on non-GET requests.
 
 So, add edit/delete on the comment section
+
+Now, make an ingredient show page that list all the recipes under that ingredient. 
