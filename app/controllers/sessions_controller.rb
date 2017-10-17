@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
         flash[:alert] = "Please check login info, and try again"
         render :new
       end
-    end 
+    end
   end
 
   def destroy

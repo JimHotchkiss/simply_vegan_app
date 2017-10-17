@@ -30,7 +30,16 @@ class RecipesController < ApplicationController
   def update
     @recipe = find_recipe
     @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+    if @recipe.save
+     redirect_to recipe_path(@recipe)
+   else
+     render :new
+   end
+  end
+
+  def destroy
+    find_recipe.destroy
+    redirect_to root_path
   end
 
   def show

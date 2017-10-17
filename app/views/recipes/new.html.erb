@@ -1,5 +1,6 @@
 <%= render 'recipes/errors' %>
 
-<%= form_for @recipe do |f| %>
+<%= bootstrap_form_for @recipe do |f| %>
   <%= render 'recipes/form', f: f %>
+  <%= f.submit "Create Recipe" %>
 <% end %>

@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get  'login',  to: 'sessions#new'
   post 'login',  to: 'sessions#create'
-  get  'logout', to: 'sessions#destroy'
+  delete  'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy' # include a get request for destroy
 
   resources :users, only: [:new, :create]
   resources :ingredients, only: [:show]
-  resources :recipes, only: [:index, :new, :create, :show, :edit, :update]
+  resources :recipes
   resources :comments, only: [:create]
 
   resources :recipes, only: [:show] do

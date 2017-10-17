@@ -1,11 +1,18 @@
 <div style="background-color:lightgray;" class="container">
+
+  <p style="font-weight:bold; color:red">Ingredients:</p>
+    <% @recipe.ingredients.each do |ingredient| %>
+      | <%= link_to ingredient.name, ingredient_path(ingredient) %>
+    <% end %>
+    <br></br>
   <p style="font-weight:bold; color:red">Title:</p>
-    <p><%= @recipe.title %></p><br>
+    <p><%= @recipe.title %></p>
+
   <p style="font-weight:bold; color:red">Instructions:</p>
     <p><%= @recipe.instructions %><p>
 
       <% if @recipe.user_id == current_user.id %>
-        <%= link_to 'edit', edit_recipe_path%> | <%= link_to 'delete', @recipe, method: :delete, data: {confirm: "WAIT! Seriously?"} %>
+        <%= link_to 'edit', edit_recipe_path%> | <%= link_to 'delete', @recipe, method: :delete, data: { confirm: "WAIT! Seriously?"} %>
       <% end %>
 
 </div><br></br>

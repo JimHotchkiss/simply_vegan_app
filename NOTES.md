@@ -35,3 +35,22 @@ So, I've added the layout for comments, no I want I link_to comments, and create
   And add link_to ingredients on recipe show page
 
   I want to add the ability for a user to edit or delete their own recipe
+    * TO GET LINK_TO DELETE TO WORK, INCLUDE ON LAYOUT/APPLICATION FILE
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    * also had to edit application_controller to include, protect_from_forgery prepend: true, will double check about security risk
+
+    Suggestion to fix token authenticity problem
+      * Rails guide authenticity token as a google search should point you in the right direction
+      * Avi: aviflombaum @jim it’s about how you built to logout link. Since it’s submitting a post request (faked as a delete).  You need to include a csrf token.  If you changed your layout recently.  Or just your js or anything. It’s possible it got lost.  Google csrf token and logout links. Or just change the route to also accept a get request to /logout at sessions#destrot
+
+May have fixed with:
+    * application_controller/ protect_from_forgery with: :null_session, only: Proc.new { |c| c.request.format.json? }
+
+Giong to try another fix, by adding '<%= csrf_meta_tags %>' into the <head>
+  * This seems to work, and is required in Rails 4 for jQuerry UJS to send the aunthenticity token on non-GET requests.
+
+So, add edit/delete on the comment section
