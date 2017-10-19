@@ -13,6 +13,8 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
+    #@recipe.recipe_ingredients.build(quantity: recipe_params[:recipe_ingrdient][:quantity])
+
 
     if @recipe.save
       flash[:message] = "Thanks for contributing a recipe"
@@ -50,7 +52,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :instructions, ingredient_ids:[], ingredients_attributes: [:name])
+    params.require(:recipe).permit(:title, :instructions, ingredient_ids:[], ingredients_attributes: [:name], :recipe_ingredients_attributes => [:quantity, :ingredient_id])
   end
 
 

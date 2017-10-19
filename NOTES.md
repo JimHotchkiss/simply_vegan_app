@@ -55,4 +55,16 @@ Giong to try another fix, by adding '<%= csrf_meta_tags %>' into the <head>
 
 So, add edit/delete on the comment section
 
-Now, make an ingredient show page that list all the recipes under that ingredient. 
+Now, make an ingredient show page that list all the recipes under that ingredient.
+
+
+Blog Gif link: <iframe src="https://giphy.com/embed/CDH0spsSaqQUg" width="900" height="192" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
+
+I need to build out a nest form that allows the user to assign an attribute, in this case, quantity, to the recipe_ingredient.  
+
+We've already nest ingredients within recipe, but now we need to nest, either, ingredients in recipe_ingredients, or recipe_ingredients in ingredients.  
+
+I need to access to @recipe.ingredient.first.name, and @recipe.ingredient.first.quantity
+  * First thing I'll do is add 'quantity' to the recipe_ingredients table.  
+  * Then I'll look at the recipe form.
+I can access each instantiated recipe and ingredient through recipe_ingredient

@@ -9,6 +9,8 @@ class Recipe < ApplicationRecord
 
   before_save :make_title_downcase
 
+  accepts_nested_attributes_for :recipe_ingredients
+
   def ingredients_attributes=(ingredient_attributes)
     ingredient_attributes.values.each do |ingredient_attribute|
       if !ingredient_attribute[:name].blank?
