@@ -2,7 +2,6 @@ class RecipeIngredient < ApplicationRecord
   belongs_to :recipe
   belongs_to :ingredient, optional: true
 
-  #accepts_nested_attributes_for :ingredient
 
   def ingredient_attributes=(ingredient_attributes)
     ingredient_attributes.each do |index, value|

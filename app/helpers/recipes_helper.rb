@@ -5,7 +5,12 @@ module RecipesHelper
   end
 
   def recipe_comments
-    @recipe.recipe_ingredients.build.build_ingredient
+    find_recipe.comments.most_recent(@recipe.comments.count)
   end
- 
+
+  def recipe_user
+    @recipe.user_id = current_user.id
+    @recipe.save
+  end
+
 end

@@ -1,12 +1,10 @@
 <div style="background-color:lightgray;" class="container">
   <p style="font-weight:bold; color:red">Ingredients:</p>
 
-    <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-      <%= recipe_ingredient.ingredient.name %>: <%= recipe_ingredient.quantity %>
-    <% end  %>
+<% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+  <li><%= recipe_ingredient.ingredient.name %>: <%= recipe_ingredient.quantity %></li>
+  <% end  %><br>
 
-
-    <br></br>
   <p style="font-weight:bold; color:red">Title:</p>
     <p><%= @recipe.title %></p>
 

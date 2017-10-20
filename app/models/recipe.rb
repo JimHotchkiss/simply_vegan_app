@@ -9,16 +9,7 @@ class Recipe < ApplicationRecord
 
   before_save :make_title_downcase
 
-  accepts_nested_attributes_for :recipe_ingredients
-
-  def ingredients_attributes=(ingredient_attributes)
-    ingredient_attributes.values.each do |ingredient_attribute|
-      if !ingredient_attribute[:name].blank?
-        ingredient = Ingredient.find_or_create_by(ingredient_attribute)
-        self.ingredients << ingredient
-      end
-    end
-  end
+  accepts_nested_attributes_for :recipe_ingredients, :reject_if => proc { |attribute| attribute[:quantity].blank? && attribute[:ingredient_attributes][:name].blank?}
 
   private
 

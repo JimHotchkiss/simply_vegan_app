@@ -8,15 +8,14 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe_comments = recipe_comments
-  
+    #5.times { @recipe.recipe_ingredients.build.build_ingredient}
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.user_id = current_user.id
 
     if @recipe.save
+      recipe_user
       flash[:message] = "Thanks for contributing a recipe"
       redirect_to recipe_path(@recipe)
     else
@@ -46,7 +45,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = find_recipe
-    @recipe_comments = find_recipe.comments.most_recent(@recipe.comments.count)
+    @recipe_comments = recipe_comments
 
   end
 
