@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ingredients_list = ["broccoli", "zucchini", "squash"]
+#ingredients_list = ["broccoli", "zucchini", "squash"]
 
-ingredients_list.each do |ingredient|
-  Ingredient.create(name: ingredient)
-end
+#ingredients_list.each do |ingredient|
+#  Ingredient.create(name: ingredient)
+#end

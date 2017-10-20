@@ -1,13 +1,8 @@
 <div style="background-color:lightgray;" class="container">
   <p style="font-weight:bold; color:red">Ingredients:</p>
 
-    <% @recipe.ingredients.each do |ingredient| %>
-    <%= binding.pry %>
-      | <%= link_to ingredient.name, ingredient_path(ingredient) %>
-    <% end %>
-
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-      <%= recipe_ingredient.quantity %>
+      <%= recipe_ingredient.ingredient.name %>: <%= recipe_ingredient.quantity %>
     <% end  %>
 
 

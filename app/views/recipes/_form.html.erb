@@ -4,11 +4,12 @@
 
 <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %><br></br>
 
-<%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields|%>
-  <%= ingredients_fields.text_field :name %><br></br>
-
-<% end %>
 
 <%= f.fields_for :recipe_ingredients, @recipe.recipe_ingredients.build do |recipe_ingredients_fields|%>
+  <%= recipe_ingredients_fields.fields_for :ingredient, @recipe.recipe_ingredients.build.build_ingredient do |ingredient_fields| %>
+
+    <%= ingredient_fields.text_field :name %><br>
+
   <%= recipe_ingredients_fields.text_field :quantity %><br></br>
+  <% end %>
 <% end %>

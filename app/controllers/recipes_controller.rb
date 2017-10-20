@@ -8,13 +8,13 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe_comments = recipe_comments
+  
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-    #@recipe.recipe_ingredients.build(quantity: recipe_params[:recipe_ingrdient][:quantity])
-
 
     if @recipe.save
       flash[:message] = "Thanks for contributing a recipe"
@@ -47,12 +47,13 @@ class RecipesController < ApplicationController
   def show
     @recipe = find_recipe
     @recipe_comments = find_recipe.comments.most_recent(@recipe.comments.count)
+
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :instructions, ingredient_ids:[], ingredients_attributes: [:name], :recipe_ingredients_attributes => [:quantity, :ingredient_id])
+    params.require(:recipe).permit(:title, :instructions, ingredient_ids:[], recipe_ingredients_attributes: [:quantity, ingredient_attributes: [:name]])
   end
 
 

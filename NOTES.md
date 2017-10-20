@@ -68,3 +68,13 @@ I need to access to @recipe.ingredient.first.name, and @recipe.ingredient.first.
   * First thing I'll do is add 'quantity' to the recipe_ingredients table.  
   * Then I'll look at the recipe form.
 I can access each instantiated recipe and ingredient through recipe_ingredient
+
+Going to try nesting recipe_ingredients and ingredients with @recipe.recipe_ingredients.build.build_ingredient
+
+Then I will nest these in the form
+
+Then I will move the ingredient_attributes from recipe model to the recipe_ingredient model.  
+
+Then I will put accepts_nested_attributes_for :recipe_ingredients on the recipe model.
+
+Then I will nest ingredient_attributes inside of recipe_ingredients_attributes in the recipe_params.  
