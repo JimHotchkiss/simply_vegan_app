@@ -16,4 +16,7 @@ class Recipe < ApplicationRecord
   def make_title_downcase
     self.title = self.title.downcase
   end
+
+  
+
 end

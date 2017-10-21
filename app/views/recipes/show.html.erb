@@ -2,7 +2,7 @@
   <p style="font-weight:bold; color:red">Ingredients:</p>
 
 <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-  <li><%= recipe_ingredient.ingredient.name %>: <%= recipe_ingredient.quantity %></li>
+  <li><%= recipe_ingredient.ingredient.name.downcase %>: <%= recipe_ingredient.quantity %></li>
   <% end  %><br>
 
   <p style="font-weight:bold; color:red">Title:</p>

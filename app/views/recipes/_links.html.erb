@@ -3,7 +3,7 @@
 
   <p style="color:red">Search by ingredients:</p>
     <% @ingredients.each do |ingredient|  %>
-      | <%= link_to ingredient.name, ingredient_path(ingredient) %>
+      | <%= link_to ingredient.name.downcase, ingredient_path(ingredient) %>
     <% end %>
 </div>
 

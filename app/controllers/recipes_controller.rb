@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    #5.times { @recipe.recipe_ingredients.build.build_ingredient}
   end
 
   def create
@@ -19,7 +18,6 @@ class RecipesController < ApplicationController
       flash[:message] = "Thanks for contributing a recipe"
       redirect_to recipe_path(@recipe)
     else
-      # validation
       render :new
     end
   end
@@ -54,6 +52,5 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:title, :instructions, ingredient_ids:[], recipe_ingredients_attributes: [:quantity, ingredient_attributes: [:name]])
   end
-
 
 end

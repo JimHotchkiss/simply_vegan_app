@@ -13,4 +13,11 @@ module RecipesHelper
     @recipe.save
   end
 
+  def find_recipe_ingredients
+    @recipe.recipe_ingredients.each do |recipe_ingredient|
+      recipe_ingredient
+    end    
+  end
+
+
 end

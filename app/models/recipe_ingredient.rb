@@ -6,6 +6,7 @@ class RecipeIngredient < ApplicationRecord
   def ingredient_attributes=(ingredient_attributes)
     ingredient_attributes.each do |index, value|
       if !value.blank?
+        value.split("\n").map(&:rstrip).join("\n")
         ingredient = Ingredient.find_or_create_by(name: value)
         self.ingredient = ingredient
       end
