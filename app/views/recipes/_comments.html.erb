@@ -8,6 +8,9 @@
   <div class="container" style="border : solid 1px #000000; color:blue; padding : 4px; width : 800px; height : 200px; overflow : auto; ">
       <h2 style="color:red"><%= flash[:notice] %></h2>
    ~> <%= comment.description %><br>
-   <%= render '/recipes/motify', comment: comment %>
+   <%= render '/recipes/motify', comment: comment %><br></br>
+
+   <%= link_to 'show me this comment', recipe_comment_path(recipe.id)%>
+
  </div><br>
 <% end %>
