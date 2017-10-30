@@ -47,6 +47,12 @@ class RecipesController < ApplicationController
 
   end
 
+  def most_comments
+  comments_array
+  sorted_comments = comments_array.sort_by(&:size)
+  @most_comments = sorted_comments.last
+  end
+
   private
 
   def recipe_params

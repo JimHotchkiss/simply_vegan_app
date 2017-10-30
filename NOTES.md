@@ -77,4 +77,9 @@ Then I will move the ingredient_attributes from recipe model to the recipe_ingre
 
 Then I will put accepts_nested_attributes_for :recipe_ingredients on the recipe model.
 
-Then I will nest ingredient_attributes inside of recipe_ingredients_attributes in the recipe_params.  
+Then I will nest ingredient_attributes inside of recipe_ingredients_attributes in the recipe_params.
+
+I need to make a custom url.  The url will route to a action controller that will preform some type of functionality.  
+  * I think I will make a most_comments route that will return the user with the most comments and those comments.  
+So, I think I got the array of comments sorted so it will return an array of the most comments.  
+  * Next, build a most_comments show form.  

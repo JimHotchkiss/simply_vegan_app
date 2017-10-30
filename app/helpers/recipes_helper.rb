@@ -16,7 +16,17 @@ module RecipesHelper
   def find_recipe_ingredients
     @recipe.recipe_ingredients.each do |recipe_ingredient|
       recipe_ingredient
-    end    
+    end
+  end
+
+  def comments_array
+    @comments = []
+    recipes = Recipe.all
+
+    recipes.each do |recipe|
+        @comments.push(recipe.comments)
+    end
+    @comments
   end
 
 

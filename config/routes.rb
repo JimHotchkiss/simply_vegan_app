@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   resources :recipes, only: [:show] do
     resources :comments, only: [:new, :show]
   end
+
+  get 'most_comments', to: 'recipes#most_comments'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
