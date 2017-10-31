@@ -48,9 +48,11 @@ class RecipesController < ApplicationController
   end
 
   def most_comments
-  comments_array
-  sorted_comments = comments_array.sort_by(&:size)
-  @most_comments = sorted_comments.last
+    comments_array
+    sorted_comments = comments_array.sort_by(&:size)
+    @most_comments = sorted_comments.last
+    @comment_recipe = Recipe.find(@most_comments[0].recipe_id)
+    redirect_to recipe_path(@comment_recipe)
   end
 
   private
