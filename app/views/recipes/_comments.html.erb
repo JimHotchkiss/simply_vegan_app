@@ -10,7 +10,7 @@
    ~> <%= comment.description %><br>
    <%= render '/recipes/motify', comment: comment %><br></br>
 
-   <%= link_to 'show me this comment', recipe_comment_path(recipe.id)%>
+   <%= link_to 'show me this comment', recipe_comment_path(current_user, comment.id)%>
 
  </div><br>
 <% end %>

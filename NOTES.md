@@ -57,7 +57,6 @@ So, add edit/delete on the comment section
 
 Now, make an ingredient show page that list all the recipes under that ingredient.
 
-
 Blog Gif link: <iframe src="https://giphy.com/embed/CDH0spsSaqQUg" width="900" height="192" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
 
 I need to build out a nest form that allows the user to assign an attribute, in this case, quantity, to the recipe_ingredient.  
@@ -84,3 +83,6 @@ I need to make a custom url.  The url will route to a action controller that wil
 So, I think I got the array of comments sorted so it will return an array of the most comments.  
   * Next, build a most_comments show form.  
 Test out this functionality by adding more comments to an already existing recipe.  
+
+Okay, so I have a bug. The nested routes recipes/:id/comments/:id is reversing the id.  
+  * Think I got bug fixed: in the link_to path, I had to include (current_user, comment.id)
