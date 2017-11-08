@@ -10,12 +10,17 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :ingredients, only: [:show]
-  resources :recipes
-  resources :comments
 
-  resources :recipes, only: [:show] do
-    resources :comments, only: [:new, :show]
+
+  resources :recipes do
+  # this allows 'shallow' nesting
+    resources :comments, only: [:show, :new]
   end
+  resources :comments
+  # resources :articles do
+  # resources :comments, only: [:index, :new, :create]
+  # end
+  # resources :comments, only: [:show, :edit, :update, :destroy]
 
   get 'most_comments', to: 'recipes#most_comments'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

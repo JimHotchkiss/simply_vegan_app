@@ -86,3 +86,9 @@ Test out this functionality by adding more comments to an already existing recip
 
 Okay, so I have a bug. The nested routes recipes/:id/comments/:id is reversing the id.  
   * Think I got bug fixed: in the link_to path, I had to include (current_user, comment.id)
+
+  * I've run into a problem with the nested resources, specifically the edit/delete functionality of the recipes/:id/comments/:id.  I've eleminated the delete option, in an attempt to try and isolate the problem.  
+    ~ | <%= link_to 'delete',[comment.recipe_id, comment], method: :delete, data: { confirm: "WAIT! Seriously?"}
+
+To fix this bug, I'm going to back up, and remove the edit/delete.  Once I can create a comment using nested resources, I will then introduce edit/delete.  Below is the edit/delete code, I had been using.  
+<%= link_to 'edit', edit_recipe_comment_path %> | <%= link_to "delete", comment, method: :delete, data: { confirm: "WAIT! Seriously?" } %>

@@ -1,12 +1,13 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = Comment.new(recipe_id: params[:recipe_id])
+     @comment = Comment.new(recipe_id: params[:recipe_id])
   end
 
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
+    binding.pry
     if @comment.save
       flash[:message] = "Thanks for your comment"
       redirect_to recipe_path(@comment.recipe_id)
