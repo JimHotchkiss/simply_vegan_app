@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    binding.pry
     if @comment.save
       flash[:message] = "Thanks for your comment"
       redirect_to recipe_path(@comment.recipe_id)

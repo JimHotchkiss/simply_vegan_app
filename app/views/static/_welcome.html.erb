@@ -1,5 +1,5 @@
 <% if logged_in?  %>
  <p>Welcome, <%= current_user.username %>, to Simply Vegan. <%= flash[:message] %></p>
 <% else %>
- <p>Welcome to Simply Vegan</p>
+ <p>Welcome to Simply Vegan. <%= flash[:message] %></p>
 <% end %>
