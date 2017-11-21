@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
 
   get 'most_comments', to: 'recipes#most_comments'
+
+  get 'easy_recipe', to: 'recipes#easy_recipe'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

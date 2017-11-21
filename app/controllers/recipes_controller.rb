@@ -55,6 +55,15 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@comment_recipe)
   end
 
+  def easy_recipe
+    all_recipes
+    sorted_recipes = all_recipes.sort_by(&:size)
+    @min_ingredients = sorted_recipes.first
+    @easy_recipe = Recipe.find(@min_ingredients[0].recipe_id)
+    redirect_to recipe_path(@easy_recipe)
+
+  end
+
   private
 
   def recipe_params

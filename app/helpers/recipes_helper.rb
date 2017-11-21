@@ -29,5 +29,13 @@ module RecipesHelper
     @comments
   end
 
+  def all_recipes
+    @all_recipes = []
+    Recipe.all.each do |recipe|
+      @all_recipes.push(recipe.recipe_ingredients)
+    end
+    @all_recipes
+  end
+
 
 end
